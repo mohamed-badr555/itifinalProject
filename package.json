@@ -1,17 +1,17 @@
 {
-  "homepage": "https://mohamed-badr555.github.io/ecommerceitiproject",
+"homepage": "https://mohamed-badr555.github.io/ecommerceitiproject",
   "name": "itiproject",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
- "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "dev": "vite",
-   "build": "vite build --base=./",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  "dev": "vite",
+  "build": "vite build --base=/ecommerceitiproject/",
+  "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+  "preview": "vite preview"
+},
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
     "axios": "^1.7.3",
