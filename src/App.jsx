@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, Navigate, RouterProvider } from 'react-router-dom'
 import './App.css'
 
 import MyNav from './Components/MyNav/MyNav'
@@ -47,16 +47,16 @@ function App() {
     checkReload()
   },[])
 
-  const router = createBrowserRouter([
-    { path: '', element:  <Layout curruntUser={loggedInUser} removeUser={removeUserData} />, children:[
-        { path: "", element: <ProductedRoute><Home /></ProductedRoute>  },
-        {path:'home',element: <ProductedRoute><Home /></ProductedRoute> },
-        {path:"products",element: <ProductedRoute><Products/></ProductedRoute>} ,
-        {path:"products/:id",element: <ProductedRoute><ProductDetails/></ProductedRoute>} ,
-        {path:"products/:id/edit",element: <ProductedRoute><ProductForm/></ProductedRoute>} ,
-
-        {path:'login',element:<Login userInfo={getLoggedInUser}/>},
-        {path:'register',element:<Register userInfo={getLoggedInUser} /> }
+  const router = createHashRouter([
+    { path: '/', element:  <Layout curruntUser={loggedInUser} removeUser={removeUserData} />, children:[
+        { path: "/", element: <ProductedRoute><Home /></ProductedRoute>  },
+        { path:"home",element: <ProductedRoute><Home /></ProductedRoute> },
+        { path:"products",element: <ProductedRoute><Products/></ProductedRoute>} ,
+        { path:"products/:id",element: <ProductedRoute><ProductDetails/></ProductedRoute>} ,
+        { path:"products/:id/edit",element: <ProductedRoute><ProductForm/></ProductedRoute>} ,
+  
+        { path:'login',element:<Login userInfo={getLoggedInUser}/>},
+        { path:'register',element:<Register userInfo={getLoggedInUser} /> }
       ]
     },
     {path:'*',element:<NotFound/> }
